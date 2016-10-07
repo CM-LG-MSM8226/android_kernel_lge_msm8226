@@ -1887,6 +1887,13 @@ config MSM_CPU_FREQ_MIN
 
 endif # CPU_FREQ_MSM
 
+
+config ALUCARD_HOTPLUG
+	bool "Enable alucard-hotplug cpu hotplug driver"
+	default n
+	help
+	  Generic Alucard-hotplug cpu hotplug driver for ARM SOCs
+
 config MSM_DEVFREQ_CPUBW
 	bool "Devfreq device for CPU<->DDR IB/AB BW voting"
 	depends on PM_DEVFREQ
@@ -1900,6 +1907,18 @@ config MSM_DEVFREQ_CPUBW
 	  DDR IB/AB bandwidth votes. This driver provides a SoC topology
 	  agnostic interface to so that some of the devfreq governors can be
 	  shared across SoCs.
+
+config CPU_OVERCLOCK
+	bool "enable CPU overclocking of Cortex A7"
+	default n
+	help
+	  Simple CPU Overclocking Option to 1.6 GHz
+
+config CPU_UNDERCLOCK
+	bool "enable CPU underclocking of Cortex A7"
+	default n
+	help
+	  Simple CPU Underclocking Option to 192 & 249 MHz
 
 config MSM_AVS_HW
 	bool "Enable Adaptive Voltage Scaling (AVS)"
@@ -2885,6 +2904,13 @@ config MSM_DCVS
 	  The DCVS manager allows idle driver to feed the idle information to the
 	  algorithm and the algorithm returns a frequency for the core which is
 	  passed to the frequency change driver.
+
+config FORCE_FAST_CHARGE
+	bool "Force AC charge mode at will"
+	default y
+	help
+	  A simple sysfs interface to force adapters that
+	  are detected as USB to charge as AC.
 
 config MSM_CPR
 	tristate "Use MSM CPR in S/W mode"

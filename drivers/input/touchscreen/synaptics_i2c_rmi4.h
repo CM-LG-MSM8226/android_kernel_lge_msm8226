@@ -31,9 +31,10 @@
 #ifdef CONFIG_FB
 #include <linux/notifier.h>
 #include <linux/fb.h>
-#elif defined CONFIG_HAS_EARLYSUSPEND
-#include <linux/earlysuspend.h>
 #endif
+
+#include <linux/earlysuspend.h>
+
 #include <linux/debugfs.h>
 
 #define PDT_PROPS (0x00EF)
